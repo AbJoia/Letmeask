@@ -1,17 +1,18 @@
 import { useHistory, useParams } from "react-router-dom";
 
-import logoImg from "../assets/images/logo.svg";
-import deleteImg from "../assets/images/delete.svg";
-import checkImg from "../assets/images/check.svg";
-import answerImg from "../assets/images/answer.svg";
+import logoImg from "../../assets/images/logo.svg";
+import deleteImg from "../../assets/images/delete.svg";
+import checkImg from "../../assets/images/check.svg";
+import answerImg from "../../assets/images/answer.svg";
+import likeImg from "../../assets/images/like.svg";
 
-import { Button } from "../components/Button";
-import { Question } from "../components/Question";
-import { RoomCode } from "../components/RoomCode";
+import { Button } from "../../components/Button";
+import { Question } from "../../components/Question";
+import { RoomCode } from "../../components/RoomCode";
 // import { useAuth } from '../hooks/useAuth';
-import { useRoom } from "../hooks/useRoom";
-import "../styles/room.scss";
-import { database } from "../services/firebase";
+import { useRoom } from "../../hooks/useRoom";
+import "../../styles/room.scss";
+import { database } from "../../services/firebase";
 
 type RoomParams = {
   id: string;
@@ -78,7 +79,12 @@ export function AdminRoom() {
                 author={question.author}
                 isAnswered={question.isAnswered}
                 isHighlighted={question.isHighlighted}
+                likeCount={question.likeCount}
               >
+                <div>
+                  <span>{question.likeCount}</span>
+                  <img src={likeImg} alt="Quantidades de likes da pergunta" />
+                </div>
                 {!question.isAnswered && (
                   <>
                     <button
@@ -105,7 +111,7 @@ export function AdminRoom() {
                   onClick={() => handleDeleteQuestion(question.id)}
                 >
                   <img src={deleteImg} alt="Remover pergunta" />
-                </button>
+                </button>    
               </Question>
             );
           })}

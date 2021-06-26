@@ -10,7 +10,7 @@
 
   &.highlighted {
     background: #f4f0ff;
-    border: 1px solid #835AFD;
+    border: 1px solid #835afd;
 
     footer .user-info span {
       color: #29292e;
@@ -18,10 +18,10 @@
   }
 
   &.answered {
-    background: #DBDCDD;
+    background: #dbdcdd;
   }
 
-  p{
+  p {
     color: #29292e;
   }
 
@@ -34,13 +34,13 @@
     .user-info {
       display: flex;
       align-items: center;
-  
+
       img {
         width: 32px;
         height: 32px;
         border-radius: 50%;
       }
-  
+
       span {
         margin-left: 8px;
         color: #707380;
@@ -48,7 +48,7 @@
       }
     }
 
-    >div{
+    > div {
       display: flex;
       gap: 16px;
     }
@@ -59,16 +59,16 @@
       cursor: pointer;
       transition: filter 0.2s;
 
-      &.like-button{
+      &.like-button {
         display: flex;
         align-items: flex-end;
         color: #737380;
         gap: 8px;
 
-        &.liked{
+        &.liked {
           color: #835afd;
 
-          svg path{
+          svg path {
             stroke: #835afd;
           }
         }
@@ -78,5 +78,5 @@
         filter: brightness(0.7);
       }
     }
-  }  
+  }
 }
